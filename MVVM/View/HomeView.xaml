@@ -1,0 +1,604 @@
+﻿<UserControl x:Class="Boosty.MVVM.View.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sy="http://schemas.syncfusion.com/wpf"
+             xmlns:local="clr-namespace:Boosty.MVVM.View"
+             xmlns:viewModel="clr-namespace:Boosty.MVVM.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             >
+    <UserControl.DataContext>
+        <viewModel:HomeViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1">
+
+            <Border Width="200" 
+                Height="400"
+                CornerRadius="20"
+                Margin="0,25,0,0"
+                Background="#2F3136">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="66"></RowDefinition>
+                        <RowDefinition Height="66"></RowDefinition>
+                        <RowDefinition Height="66"></RowDefinition>
+                        <RowDefinition Height="66"></RowDefinition>
+                        <RowDefinition Height="66"></RowDefinition>
+                        <RowDefinition Height="70
+"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" 
+                        Grid.Row="0"
+                        Background="#FFCA00"
+                        CornerRadius="20,0,0,0">
+
+                    </Border>
+                    <Border Grid.Column="0" 
+                        Grid.Row="1"
+                        Background="#FFCA00">
+
+                    </Border>
+                    <Border Grid.Column="0" 
+                        Grid.Row="2"
+                        Background="#FFCA00">
+
+                    </Border>
+                    <Border Grid.Column="0" 
+                        Grid.Row="3"
+                        Background="#FFCA00">
+
+                    </Border>
+                    <Border Grid.Column="0" 
+                        Grid.Row="4"
+                        Background="#FFCA00">
+
+                    </Border>
+                    <Border Grid.Column="0" 
+                        Grid.Row="5"
+                        Background="#FFCA00"
+                        CornerRadius="0,0,0,20">
+
+                    </Border>
+                    <Image Source="/Images/windowsIcon.png"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Width="30"
+                           Height="30"
+                       ></Image>
+                    <Image Source="/Images/cpuIcon.png"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       Width="30"
+                           Height="30"
+                      
+                       ></Image>
+
+
+                    <Image Source="/Images/ramIcon.png"
+                       Grid.Row="2"
+                       Grid.Column="0"
+                       Width="30"
+                      Height="30"
+                       ></Image>
+
+
+                    <Image Source="/Images/mbIcon.png"
+                       Grid.Row="3"
+                       Grid.Column="0"
+                       Width="30"
+                      Height="30"
+                       ></Image>
+
+
+                    <Image Source="/Images/gpuIcon.png"
+                       Grid.Row="4"
+                       Grid.Column="0"
+                       Width="30"
+                      Height="30"
+                       ></Image>
+
+
+                    <Image Source="/Images/hdIcon.png"
+                       Grid.Row="5"
+                       Grid.Column="0"
+                       Width="30"
+                      Height="30"
+                       ></Image>
+                    <TextBlock x:Name="WinVerTextBlock" Grid.Row="0"
+                           Grid.Column="1"
+                           TextWrapping="WrapWithOverflow"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           Margin="10,0,0,0" 
+                               Text="{Binding winInfo}"></TextBlock>
+                    <TextBlock x:Name="CPUTextBlock" Grid.Row="1"
+                           Grid.Column="1"
+                           TextWrapping="Wrap"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           Margin="10,0,10,0" 
+                               Text="{Binding cpuInfo}"></TextBlock>
+                    <TextBlock x:Name="RAMTextBlock" Grid.Row="2"
+                           Grid.Column="1"
+                           TextWrapping="WrapWithOverflow"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           Margin="10,0,10,0" 
+                           Text="{Binding ramName}"></TextBlock>
+                    <TextBlock x:Name="MBTextBlock" Grid.Row="3"
+                           Grid.Column="1"
+                           TextWrapping="WrapWithOverflow"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           Margin="10,0,10,0" Text="{Binding mbInfo}"></TextBlock>
+
+                    <TextBlock x:Name="GPUTextBlock" Grid.Row="4"
+                           Grid.Column="1"
+                           TextWrapping="WrapWithOverflow"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           Text="{Binding gpuInfo}"
+                           Margin="10,0,10,0" ></TextBlock>
+                    <TextBlock x:Name="HDTextBlock" Grid.Row="5"
+                           Grid.Column="1"
+                           TextWrapping="WrapWithOverflow"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           Margin="10,0,10,0" 
+                           Text="{Binding hdInfo}"></TextBlock>
+                </Grid>
+            </Border>
+        </StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="170"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="225"></RowDefinition>
+            </Grid.RowDefinitions>
+
+
+            <sy:SfCircularProgressBar  ShowProgressValue="False" x:Name="cpuBar" ProgressColor="#FFCA00" IndicatorOuterRadius="0.85" TrackOuterRadius="0.85"  TrackColor="#2F3136"  Progress="0"  Width="150">
+                <sy:SfCircularProgressBar.RangeColors>
+                    <sy:RangeColorCollection>
+                        <sy:RangeColor IsGradient="True" Color="#ffca00" Start="0" End="100"/>
+                    </sy:RangeColorCollection>
+                </sy:SfCircularProgressBar.RangeColors>
+            </sy:SfCircularProgressBar>
+            
+
+            <TextBlock x:Name="TimerLabelCpu"
+                       Text="0"
+                       Foreground="#FFCA00"
+                       Height="100"
+                       Width="100"
+                       FontSize="45"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       Margin="0,10,0,0">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="30"
+                                      ShadowDepth="2"
+                                      Direction="90"
+                                      Color="#FFCA00"></DropShadowEffect>
+
+                </TextBlock.Effect>
+            </TextBlock>
+            <TextBlock Text="P E R C E N T"
+                       Foreground="#FFFFFF"
+                       Height="20"
+                       Width="210"
+                       FontFamily="/Fonts/#Poppins"
+                       FontSize="12"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       Margin="0,60,0,0" />
+
+
+            
+
+            <sy:SfCircularProgressBar Grid.Column="1" ShowProgressValue="False" x:Name="gpuBar" ProgressColor="#FFCA00" IndicatorOuterRadius="0.85" TrackOuterRadius="0.85"  TrackColor="#2F3136"  Progress="0"  Width="150">
+                <sy:SfCircularProgressBar.RangeColors>
+                    <sy:RangeColorCollection>
+                        <sy:RangeColor IsGradient="True" Color="#ffca00" Start="0" End="100"/>
+                    </sy:RangeColorCollection>
+                </sy:SfCircularProgressBar.RangeColors>
+            </sy:SfCircularProgressBar>
+            <TextBlock x:Name="TimerLabelGpu"
+                       Grid.Column="1"
+                       Text="0"
+                       Foreground="#FFCA00"
+                       Height="100"
+                       Width="100"
+                       FontSize="45"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       Margin="0,10,0,0">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="30"
+                                      ShadowDepth="2"
+                                      Direction="90"
+                                      Color="#FFCA00"></DropShadowEffect>
+
+                </TextBlock.Effect>
+            </TextBlock>
+            <TextBlock Text="P E R C E N T"
+                       Grid.Column="1"
+                       Foreground="#FFFFFF"
+                       Height="20"
+                       Width="210"
+                       FontFamily="/Fonts/#Poppins"
+                       FontSize="12"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       Margin="0,60,0,0" />
+
+
+
+            <sy:SfCircularProgressBar Grid.Column="2" ShowProgressValue="False" x:Name="ramBar" ProgressColor="#FFCA00" IndicatorOuterRadius="0.85" TrackOuterRadius="0.85"  TrackColor="#2F3136"  Progress="0"  Width="150">
+                <sy:SfCircularProgressBar.RangeColors>
+                    <sy:RangeColorCollection>
+                        
+                        <sy:RangeColor IsGradient="True" Color="#ffca00" Start="0" End="100"/>
+                        
+                    </sy:RangeColorCollection>
+                </sy:SfCircularProgressBar.RangeColors>
+            </sy:SfCircularProgressBar>
+            <TextBlock x:Name="TimerLabelRam"
+                       Grid.Column="2"
+                       Text="0"
+                       Foreground="#FFCA00"
+                       Height="100"
+                       Width="100"
+                       FontSize="45"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       Margin="0,10,0,0"
+                       >
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="30"
+                                      ShadowDepth="2"
+                                      Direction="90"
+                                      Color="#FFCA00"></DropShadowEffect>
+
+                </TextBlock.Effect>
+            </TextBlock>
+            <TextBlock Text="P E R C E N T"
+                       Grid.Column="2"
+                       Foreground="#FFFFFF"
+                       Height="20"
+                       Width="210"
+                       FontFamily="/Fonts/#Poppins"
+                       FontSize="12"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       Margin="0,60,0,0" />
+
+            
+
+            <Border Grid.Row ="1"
+                    CornerRadius="20,20,0,0"
+                    Margin="10,0,10,0"
+                    Background="#2F3136"></Border>
+            <Rectangle  VerticalAlignment="Bottom" Grid.Row ="1" Margin="40,4,40,0" Height="1.5" Fill="#FFCA00" Stroke="#FFCA00" HorizontalAlignment="Stretch" />
+            
+            <Border Grid.Row="2" Grid.Column="0"
+                    Background="#2F3136"
+                    CornerRadius="0,0,20,20"
+                    Margin="10,0,10,20"
+                    >
+
+
+            </Border>
+            <Border Grid.Row ="1"
+                    Grid.Column="1"
+                    CornerRadius="20,20,0,0"
+                    Background="#2F3136"
+                    Margin="10,0,10,0"></Border>
+            <Rectangle VerticalAlignment="Bottom" Grid.Column="1" Grid.Row ="1" Margin="40,4,40,0" Height="1.5" Fill="#FFCA00" Stroke="#FFCA00" HorizontalAlignment="Stretch" />
+            <Border Grid.Row="2" Grid.Column="2"
+                    Background="#2F3136"
+                    CornerRadius="0,0,20,20"
+                    Margin="10,0,10,20"
+                    >
+
+            </Border>
+            <Border Grid.Row ="1"
+                    Grid.Column="2"
+                    CornerRadius="20,20,0,0"
+                    Margin="10,0,10,0"
+                    Background="#2F3136"></Border>
+            <Rectangle VerticalAlignment="Bottom" Grid.Column="2" Grid.Row ="1" Margin="40,4,40,0" Height="1.5" Fill="#FFCA00" Stroke="#FFCA00" HorizontalAlignment="Stretch" />
+            <Border Grid.Row="2" Grid.Column="1"
+                    Background="#2F3136"
+                    CornerRadius="0,0,20,20"
+                    Margin="10,0,10,20"
+                    >
+            
+            </Border>
+
+            <TextBlock Grid.Row="1"
+                       Text="CPU"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontFamily="Fonts/#Poppins"
+                       FontWeight="Black">
+
+            </TextBlock>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="1"
+                       Text="GPU"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontFamily="Fonts/#Poppins"
+                       FontWeight="Black">
+
+            
+            </TextBlock>
+            <TextBlock Grid.Row="1"
+                       Grid.Column="2"
+                       Text="RAM"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontFamily="Fonts/#Poppins"
+                       FontWeight="Black">
+
+            </TextBlock>
+
+
+
+            <Grid Grid.Column="2"
+                  Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+
+
+                        <ColumnDefinition Width="70"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+                    <Border Margin ="10,0,10,0"
+                            Background="#2F3136"></Border>
+                    <TextBlock Text="Speed: "
+                               Margin="15,0,0,0"
+                               VerticalAlignment="Center"
+                               Foreground="White"
+                               FontFamily="Fonts/#Poppins"
+                               ></TextBlock>
+                    <TextBlock Grid.Column="1" x:Name="Avaible"
+                            Foreground="White"
+                            Text="{Binding ramClock}"
+                            TextWrapping="Wrap"
+                               VerticalAlignment="Center"
+                            Margin="0,0,10,0"
+                            FontFamily="Fonts/#Poppins"></TextBlock>
+                    
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Border Margin ="10,0,10,0"
+                            Background="#2F3136"></Border>
+                    <TextBlock Text="Volt: "
+                               Margin="15,0,0,10"
+                               VerticalAlignment="Center"
+                               Foreground="White"
+                               FontFamily="Fonts/#Poppins"></TextBlock>
+                    <TextBlock  Grid.Column="1" x:Name="Speed"
+                            Foreground="White"
+                            TextWrapping="Wrap"
+                                Text="{Binding ramVolt}"
+                            Margin="0,0,10,10"
+                                VerticalAlignment="Center"
+                            FontFamily="Fonts/#Poppins"></TextBlock>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Border Margin ="10,0,10,20" CornerRadius="0,0,0,20"
+                            Background="#2F3136"></Border>
+                    <TextBlock Text="Used: "
+                               Margin="15,0,0,20"
+                               VerticalAlignment="Center"
+                               Foreground="White"
+                               FontFamily="Fonts/#Poppins"></TextBlock>
+                    <TextBlock Grid.Column="1" x:Name="ramUsed"
+                            Foreground="White"
+                            TextWrapping="Wrap"
+                            Margin="0,0,10,20"
+                               VerticalAlignment="Center"
+                            FontFamily="Fonts/#Poppins"></TextBlock>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                </Grid>
+
+
+            </Grid>
+
+            <Grid Grid.Column="0"
+                  Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+
+
+                        <ColumnDefinition Width="70"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+                    <Border Margin ="10,0,10,0"
+                            Background="#2F3136"></Border>
+                    <TextBlock Text="Speed: "
+                               Margin="15,0,0,0"
+                               VerticalAlignment="Center"
+                               Foreground="White"
+                               FontFamily="Fonts/#Poppins"></TextBlock>
+                    <TextBlock Grid.Column="1" x:Name="Clock"
+                            Foreground="White"
+                            TextWrapping="Wrap"
+                               VerticalAlignment="Center"
+                            Margin="0,0,10,0"
+                            FontFamily="Fonts/#Poppins"></TextBlock>
+                   
+
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Border Margin ="10,0,10,0"
+                            Background="#2F3136"></Border>
+                    <TextBlock Text="Temp: "
+                               Margin="15,0,0,10"
+                               VerticalAlignment="Center"
+                               Foreground="White"
+                               FontFamily="Fonts/#Poppins"></TextBlock>
+                    <TextBlock  Grid.Column="1" x:Name="cpuTemp"
+                            Foreground="White"
+                            TextWrapping="Wrap"
+                            Margin="0,0,10,10"
+                                VerticalAlignment="Center"
+                            FontFamily="Fonts/#Poppins"></TextBlock>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Border Margin ="10,0,10,20" CornerRadius="0,0,0,20"
+                            Background="#2F3136"></Border>
+                    <TextBlock Text="Power:  "
+                               Margin="15,0,0,20"
+                               VerticalAlignment="Center"
+                               TextWrapping="Wrap"
+                               Foreground="White"
+                               FontFamily="Fonts/#Poppins"></TextBlock>
+                    <TextBlock Grid.Column="1" x:Name="Power"
+                            Foreground="White"
+                            TextWrapping="Wrap"
+                            Margin="0,0,10,20"
+                               VerticalAlignment="Center"
+                            FontFamily="Fonts/#Poppins"></TextBlock>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                </Grid>
+
+
+            </Grid>
+
+            <Grid Grid.Column="1"
+                  Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+
+
+                        <ColumnDefinition Width="70"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+                    <Border Margin ="10,0,10,0"
+                            Background="#2F3136"></Border>
+                    <TextBlock Text="Speed: "
+                               Margin="15,0,0,0"
+                               VerticalAlignment="Center"
+                               Foreground="White"
+                               FontFamily="Fonts/#Poppins"></TextBlock>
+                    <TextBlock Grid.Column="1" x:Name="gpuClock"
+                            Foreground="White"
+                            TextWrapping="Wrap"
+                               VerticalAlignment="Center"
+                            Margin="0,0,10,0"
+                            FontFamily="Fonts/#Poppins"></TextBlock>
+
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Border Margin ="10,0,10,0"
+                            Background="#2F3136"></Border>
+                    <TextBlock Text="Temp: "
+                               Margin="15,0,0,10"
+                               VerticalAlignment="Center"
+                               Foreground="White"
+                               FontFamily="Fonts/#Poppins"></TextBlock>
+                    <TextBlock  Grid.Column="1" x:Name="gpuTemp"
+                            Foreground="White"
+                            TextWrapping="Wrap"
+                            Margin="0,0,10,10"
+                                VerticalAlignment="Center"
+                            FontFamily="Fonts/#Poppins"></TextBlock>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Border Margin ="10,0,10,20" CornerRadius="0,0,0,20"
+                            Background="#2F3136"></Border>
+                    <TextBlock Text="Fan:  "
+                               Margin="15,0,0,20"
+                               VerticalAlignment="Center"
+                               TextWrapping="Wrap"
+                               Foreground="White"
+                               FontFamily="Fonts/#Poppins"></TextBlock>
+                    <TextBlock Grid.Column="1" x:Name="Fan"
+                            Foreground="White"
+                            TextWrapping="Wrap"
+                            Margin="0,0,10,20"
+                               VerticalAlignment="Center"
+                            FontFamily="Fonts/#Poppins"></TextBlock>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                </Grid>
+
+
+            </Grid>
+        </Grid>
+
+    </Grid>
+</UserControl>

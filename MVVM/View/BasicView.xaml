@@ -1,0 +1,249 @@
+﻿<UserControl x:Class="Boosty.MVVM.View.BasicView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewModel="clr-namespace:Boosty.MVVM.ViewModel"
+             xmlns:local="clr-namespace:Boosty.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             >
+    <UserControl.DataContext>
+        <viewModel:BasicViewModel/>
+    </UserControl.DataContext>
+    
+    <Border Background="Transparent">
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+
+            </Grid.RowDefinitions>
+
+            <Border Grid.RowSpan="3" BorderThickness="0"
+                    CornerRadius="20"
+                    Background="#2F3136"
+                    Margin="10,10,10,10">
+
+            </Border>
+            <Border Grid.Column="0" Grid.Row="0">
+                <StackPanel 
+                    VerticalAlignment="Center">
+                    <TextBlock Margin="0,30,0,0"
+                        Text="Windows Optimization"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                           Foreground="White"
+                           FontFamily="/Fonts/#Poppins"
+                           FontWeight="Black"
+                           FontSize="16"></TextBlock>
+                    <TextBlock Text="This breaks nothing!"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                           Foreground="White"
+                           FontFamily="/Fonts/#Poppins" 
+                           FontSize="14">
+                        
+                    </TextBlock>
+                </StackPanel>
+                
+            </Border>
+            <Border Grid.Column="0" Grid.Row="1"
+                     Margin="30,0,30,0" BorderThickness="0"
+                    Background="#36393F" CornerRadius="20">
+
+                <TextBlock 
+                       HorizontalAlignment="Left"
+                       Margin="10"
+                       Foreground="DarkGray"
+                       FontFamily="/Fonts/#Poppins"
+                    TextWrapping="Wrap">
+                        - disables mouse acceleration <LineBreak/>
+                        - optimizes network adapter <LineBreak/>
+                        - optimizes taskbar <LineBreak></LineBreak>
+                        - optimizes power settings <LineBreak/>
+                        - adds high performance power plan<LineBreak/>
+                        - enables exclusive full screen mode <LineBreak/>
+                        - optimizes windows for gaming <LineBreak/>
+                        - clears temp/cache <LineBreak/>
+                        - sets timer resolution <LineBreak/>
+                        - disable throttling <LineBreak/>
+                            
+
+                </TextBlock>
+            </Border>
+            
+                <Button Grid.Row="2" Grid.Column="0" x:Name="WSOptimization"
+                        
+                        Background="Transparent"
+                        BorderThickness="2"
+                        Width="90"
+                        Height="30"
+                        BorderBrush="#FFCA00"
+                        Click="WindowsOptimization_Click"
+                        
+                        Style="{DynamicResource NoHoverCornerRaidus}"
+                         
+                        >
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="11"/>
+                    </Style>
+                </Button.Resources>
+                <Border Style="{DynamicResource OptimizeHover}">
+                    <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/lightningIcon.png"
+                           Width="15"
+                           Height="15"></Image>
+                    <TextBlock Text="Optimize"
+                               Foreground="White"
+                               Margin="0,0,3,0"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Poppins"
+                           FontWeight="Bold"
+              ></TextBlock>
+                </StackPanel>
+                </Border>
+            </Button>
+
+
+            <Border Grid.Column="1" Grid.RowSpan="3" BorderThickness="0"
+                    CornerRadius="20"
+                    Background="#2F3136"
+                    Margin="10,10,10,10">
+                
+            </Border>
+            <Border Grid.Column="1" Grid.Row="0">
+
+                <TextBlock Text="Nvidia GPU Optimization"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                           Foreground="White"
+                           FontFamily="/Fonts/#Poppins"
+                           FontWeight="Black"
+                           FontSize="16"></TextBlock>
+
+            </Border>
+            <Border Grid.Column="1" Grid.Row="1"
+                     Margin="30,0,30,0" BorderThickness="0"
+                    Background="#36393F" CornerRadius="20">
+                <TextBlock Grid.Column="1" Grid.Row="1"
+                       HorizontalAlignment="Left"
+                       Margin="10"
+                       Foreground="DarkGray"
+                          
+                       FontFamily="/Fonts/#Poppins" 
+                           TextWrapping="Wrap">
+                        - applys best nvidia settings <LineBreak/>
+                        - sets GPU from legacy- to MSI-mode
+
+                </TextBlock>
+            </Border>
+            <Button Grid.Row="2" Grid.Column="1" x:Name="NVIDIAOpimization"
+                        
+                        Background="Transparent"
+                        BorderThickness="2"
+                        Width="90"
+                        Height="30"
+                        BorderBrush="#FFCA00"
+                        Click="NVIDIAOptimization_Click"
+                        
+     Style="{DynamicResource NoHoverCornerRaidus}"
+                         
+                        >
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="11"/>
+                    </Style>
+
+                </Button.Resources>
+                <Border Style="{DynamicResource OptimizeHover}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Images/lightningIcon.png"
+                           Width="15"
+                           Height="15"></Image>
+                        <TextBlock Text="Optimize"
+                               Margin="0,0,3,0"
+                               Foreground="White"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Poppins"
+                           FontWeight="Bold"
+              ></TextBlock>
+                    </StackPanel>
+                </Border>
+            </Button>
+
+            <Border Grid.Column="2" Grid.RowSpan="3" BorderThickness="0"
+                    CornerRadius="20"
+                    Background="#2F3136"
+                    Margin="10,10,10,10">
+
+            </Border>
+            <Border Grid.Column="2" Grid.Row="0">
+
+                <TextBlock Text="AMD GPU Optimization"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                           Foreground="White"
+                           FontFamily="/Fonts/#Poppins"
+                           FontWeight="Black"
+                           FontSize="16"></TextBlock>
+
+            </Border>
+            <Border Grid.Column="2" Grid.Row="1"
+                     Margin="30,0,30,0" BorderThickness="0"
+                    Background="#36393F" CornerRadius="20">
+                <TextBlock Grid.Column="2" Grid.Row="1"
+                       HorizontalAlignment="Left"
+                       Margin="10"
+                       Foreground="DarkGray"
+                       FontFamily="/Fonts/#Poppins"
+                           TextWrapping="Wrap">
+                        - applys best Radeon settings <LineBreak/>
+                        - sets GPU from legacy- to MSI-mode
+                </TextBlock>
+            </Border>
+            <Button Grid.Row="2" Grid.Column="2" x:Name="AMDOptimization"
+                        
+                        Background="Transparent"
+                        BorderThickness="2"
+                        Width="90"
+                        Height="30"
+                        BorderBrush="#FFCA00"
+                        Click="AMDOptimization_Click"
+                        
+                        Style="{DynamicResource NoHoverCornerRaidus}"
+                         
+                        >
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="11"/>
+                    </Style>
+                </Button.Resources>
+                <Border Style="{DynamicResource OptimizeHover}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Images/lightningIcon.png"
+                           Width="15"
+                           Height="15"></Image>
+                        <TextBlock Text="Optimize"
+                               Foreground="White"
+                           VerticalAlignment="Center"
+                           FontFamily="Fonts/#Poppins"
+                           FontWeight="Bold"
+                               Margin="0,0,3,0"
+              ></TextBlock>
+                    </StackPanel>
+                </Border>
+            </Button>
+
+
+        </Grid>
+    </Border>
+</UserControl>

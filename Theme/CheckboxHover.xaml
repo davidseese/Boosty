@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="CheckBox" x:Key="CheckboxHover">
+        <Setter Property="Border.Background" Value="Transparent"/>
+        <Style.Triggers>
+            <Trigger Property="Border.IsMouseOver" Value="True">
+                <Setter Property="Border.Background" Value="#36393F" />
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+</ResourceDictionary>

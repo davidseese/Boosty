@@ -1,0 +1,37 @@
+﻿<Application x:Class="Boosty.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModel ="clr-namespace:Boosty.MVVM.ViewModel"
+             xmlns:view ="clr-namespace:Boosty.MVVM.View"
+             xmlns:local="clr-namespace:Boosty"
+             StartupUri="MainWindow.xaml"
+             Startup="Application_Startup">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/NoHover.xaml"/>
+                <ResourceDictionary Source="Theme/NoHoverCornerRadius.xaml"/>
+                <ResourceDictionary Source="Theme/ScrollViewer.xaml" />
+                <ResourceDictionary Source="Theme/AdvancedHover.xaml"/>
+                <ResourceDictionary Source="Theme/CloseHover.xaml"/>
+                <ResourceDictionary Source="Theme/OptimizeHover.xaml"/>
+                <ResourceDictionary Source="Theme/CheckboxHover.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:BasicViewModel}">
+                <view:BasicView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AdvancedViewModel}">
+                <view:AdvancedView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:CleanUpViewModel}">
+                <view:CleanUpView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:RestoreViewModel}">
+                <view:RestoreView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
